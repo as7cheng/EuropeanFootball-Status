@@ -1,0 +1,42 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>How About Teams?</h1>
+    
+    <form method="POST" action="/checkTeam">
+    <p>Name:            <input type="text" name="Name"></p>
+    <p>City:            <input type="text" name="City"></p>
+    <p>Season:          <input type="text" name="Age"></p>
+    <p>Rank:            <input type="text" name="Rank"></p>
+    <p>Losses:          <input type="text" name="Losses"></p>
+    <p>Draws:           <input type="text" name="Draws"></p>
+    <p>Losts:           <input type="text" name="Losts"></p>
+    <p>                 <input type="submit" value="Search"></p>
+</form>
+
+
+<table style="text-align: center;" width="80%" border="1">
+    {% for n in data %}
+    <tr>
+        {% for x in n %}
+        <td>{{x}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>

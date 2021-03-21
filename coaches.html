@@ -1,0 +1,40 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>Respect Which Coach?</h1>
+    
+    <form method="POST" action="/checkCoach">
+    <p>Name:           <input type="text" name="Name"></p>
+    <p>Nationality:    <input type="text" name="Nationality"></p>
+    <p>Age:            <input type="text" name="Age"></p>
+    <p>Team:           <input type="text" name="Team"></p>
+    <p>Season:         <input type="text" name="Season"></p>
+    <p>                <input type="submit" value="Search"></p>
+</form>
+
+
+<table style="text-align: center;" width="80%" border="1">
+    {% for n in data %}
+    <tr>
+        {% for x in n %}
+        <td>{{x}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>
