@@ -8,23 +8,7 @@
 # 5. click link in terminal or on your browser type "http://0.0.0.0:8111/"
 #
 
-"""
-Columbia's COMS W4111.003 Introduction to Databases
-Example Webserver
-
-To run locally:
-
-    python server.py
-
-Go to http://localhost:8111 in your browser.
-
-A debugger such as "pdb" may be helpful for debugging.
-Read about it online.
-"""
-
 import os
-import json
-import re
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
 from flask import Flask, request, render_template, g, redirect, Response
@@ -124,7 +108,7 @@ def league():
 # Method to handle user's query on league
 
 
-@app.route('/checkLeague', methods=['POST'])
+@app.route('/checkLeague')
 def checkLeague():
     # Get user's input
     name = request.form['name']
@@ -183,7 +167,7 @@ def team():
 # Method to handle user's query on teams and performance
 
 
-@app.route('/checkTeam', methods=['POST'])
+@app.route('/checkTeam')
 def checkTeam():
     name = request.form['name']
     city = request.form['city']
@@ -265,7 +249,7 @@ def player():
 # Method to handle user's query on players and performance
 
 
-@app.route('/checkPlayer', methods=['POST'])
+@app.route('/checkPlayer')
 def checkPlayer():
     name = request.form['name']
     age = request.form['age']
@@ -494,7 +478,7 @@ def coach():
 # Method to handle user's query on coach and coach performance
 
 
-@app.route('/checkCoach', methods=['POST'])
+@app.route('/checkCoach')
 def checkCoach():
     name = request.form['name']
     nation = request.form['nation']
@@ -583,7 +567,7 @@ def match():
 # Method to handle user's query on mathches
 
 
-@app.route('/checkMatch', methods=['POST'])
+@app.route('/checkMatch')
 def checkMatch():
     home = request.form['home']
     away = request.form['away']
