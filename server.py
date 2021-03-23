@@ -108,7 +108,7 @@ def league():
 # Method to handle user's query on league
 
 
-@app.route('/checkLeague')
+@app.route('/checkLeague', methods=['POST'])
 def checkLeague():
     # Get user's input
     name = request.form['name']
@@ -167,7 +167,7 @@ def team():
 # Method to handle user's query on teams and performance
 
 
-@app.route('/checkTeam')
+@app.route('/checkTeam', methods=['POST'])
 def checkTeam():
     name = request.form['name']
     city = request.form['city']
@@ -249,7 +249,7 @@ def player():
 # Method to handle user's query on players and performance
 
 
-@app.route('/checkPlayer')
+@app.route('/checkPlayer', methods=['POST'])
 def checkPlayer():
     name = request.form['name']
     age = request.form['age']
@@ -478,7 +478,7 @@ def coach():
 # Method to handle user's query on coach and coach performance
 
 
-@app.route('/checkCoach')
+@app.route('/checkCoach', methods=['POST'])
 def checkCoach():
     name = request.form['name']
     nation = request.form['nation']
@@ -567,7 +567,7 @@ def match():
 # Method to handle user's query on mathches
 
 
-@app.route('/checkMatch')
+@app.route('/checkMatch', methods=['POST'])
 def checkMatch():
     home = request.form['home']
     away = request.form['away']
